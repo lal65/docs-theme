@@ -19,7 +19,7 @@
     {% endif %}
 
     {% if page_item.url == "/" or page_item.url contains ".html" %}
-      <li class="vertical-menu__item vertical-menu__item--{{ include.depth }}{% if is_active %} vertical-menu__item--highlight{% endif %}">
+      <li class="vertical-menu__item vertical-menu__item--{{ include.depth }}{% if include.highlight and is_active %} vertical-menu__item--highlight{% endif %}">
         <a class="vertical-menu__link vertical-menu__link--{{ include.depth }}{% if page.url == page_item.url %} vertical-menu__link--active-trail{% endif %}" href="{{ page_item.url | relative_url }}">
           {{ page_item.menu_title | default: page_item.title }}
         </a>

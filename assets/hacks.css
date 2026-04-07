@@ -41,3 +41,10 @@ details p:last-child {
   margin-bottom: 2rem;
 }
 
+.docs-theme-header-content {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+}
