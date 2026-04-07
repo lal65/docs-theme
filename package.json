@@ -5,6 +5,7 @@
   "dependencies": {
     "@psu-online-education/background-container": "^4.0.0",
     "@psu-online-education/blockquote": "^1.0.0",
+    "@psu-online-education/breadcrumbs": "^2.0.1",
     "@psu-online-education/compact-menu": "^1.4.2",
     "@psu-online-education/details": "^1.0.1",
     "@psu-online-education/footer": "^1.0.2",
