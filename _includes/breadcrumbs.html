@@ -1,0 +1,24 @@
+<nav class="breadcrumbs" aria-labelledby="breadcrumbs">
+  <h2 class="visually-hidden" id="breadcrumbs">Breadcrumbs</h2>
+  <ol class="breadcrumbs__list">
+    {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+    {% for crumb in crumbs %}
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="">
+          {% if forloop.first %}
+            Home
+          {% elsif forloop.last %}
+            {{ page.title }}
+          {% else %}
+            {{ crumb | replace:'-',' ' | capitalize }}
+          {% endif %}
+        </a>
+        {% unless forloop.last %}
+          <svg class="sprite sprite--fas-chevron-right" aria-hidden="true" viewBox="0 0 320 512">
+            <use xlink:href="#fas-chevron-right" />
+          </svg>
+        {% endunless %}
+      </li>
+    {% endfor %}
+  </ol>
+</nav>
