@@ -1,0 +1,37 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include after_body_start.html %}
+    <div class="sticky-top">
+      {% include header.html %}
+    </div>
+    {% include page_title.html %}
+    <div class="default-layout">
+      {% include breadcrumbs.html %}
+      <main class="layout-two-col layout-multi-column layout-multi-column--gap-large">
+        <div id="main-content" class="layout-multi-column__region layout-multi-column__region--75">
+          {{ content
+            | replace: '<table>', '<div class="a11y-table"><table class="a11y-table__table">'
+            | replace: '<thead>', '<thead class="a11y-table__thead">'
+            | replace: '<tbody>', '<tbody class="a11y-table__tbody">'
+            | replace: '<tr>', '<tr class="a11y-table__tr">'
+            | replace: '<th>', '<th class="a11y-table__th">'
+            | replace: '<td>', '<td class="a11y-table__td">'
+            | replace: '</table>', '</table></div>'
+          }}
+        </div>
+        <aside class="layout-multi-column__region layout-multi-column__region--25">
+          <div class="sidebar-navigation">
+            {% include menu.html highlight=true %}
+          </div>
+        </aside>
+      </main>
+    </div>
+    {% include footer.html %}
+    {% include before_body_end.html %}
+  </body>
+</html>

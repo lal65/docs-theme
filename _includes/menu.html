@@ -1,0 +1,4 @@
+<nav class="vertical-menu" aria-label="Navigation">
+  {% assign include_highlight = include.highlight | default: false %}
+  {% include nav_level.html folder="/" highlight=include_highlight depth=1 in_active_trail=false %}
+</nav>

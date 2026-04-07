@@ -1,0 +1,40 @@
+{% set color_profiles = {
+  'light-grey': 'light',
+  'beaver-blue': 'dark',
+} %}
+
+{% set background_image_options = {
+  'hub-geometric:topleft': ['hub-geometric'],
+  'hub-geometric:topright': ['hub-geometric'],
+  'hub-geometric:bottomleft': ['hub-geometric'],
+  'hub-geometric:bottomright': ['hub-geometric'],
+  'shield:left': ['community-shield'],
+  'shield:right': ['community-shield'],
+  'shield:bottomright': ['community-shield'],
+  'shield:topleft-bottomright': ['community-shield','community-shield'],
+  'shield:program-page-banner-top': ['community-shield'],
+  'shield:program-page-at-a-glance': ['community-shield'],
+} %}
+{% set classes = classes|default([])|merge([
+  'bg',
+  color in color_profiles|keys ? 'bg--' ~ color,
+  background_image in background_image_options|keys ? 'bg--' ~ background_image|replace({':':'-'}),
+  padding in ['none', 'small', 'large'] ? 'bg--padding-' ~ padding,
+  width in ['narrow'] ? 'bg--' ~ width,
+])|filter(class => class is not empty) %}
+
+{# @TODO: Implement more graceful attribute management... #}
+<div class="{{ classes|join(' ') }}" {% if color in color_profiles|keys %}data-{{ color_profiles[color] }}{% endif %} {{ attributes }}>
+  {% if background_image in background_image_options|keys %}
+    <div class="bg__sprites">
+    {% for sprite in background_image_options[background_image] %}
+      <div class="bg__sprite bg__sprite--{{sprite}} bg__sprite--{{loop.index}}">
+		    {% include '@oe/sprite/sprite.twig' with { name: sprite } only %}
+		  </div>
+    {% endfor %}
+    </div>
+  {% endif %}
+  <div class="bg__content">
+    {{ content }}
+  </div>
+</div>

@@ -1,0 +1,7 @@
+@use "../../../base/src/scss/mixins" as oe;
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: oe.rem(1);
+}

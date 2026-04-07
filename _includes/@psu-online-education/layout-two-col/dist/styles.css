@@ -1,0 +1,1 @@
+.layout-two-col{flex-direction:column}@media(min-width: 550px){.layout-two-col{flex-direction:row}}

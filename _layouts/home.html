@@ -1,0 +1,29 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include after_body_start.html %}
+    <div class="sticky-top">
+      {% include header.html %}
+    </div>
+    {% include page_title.html %}
+    <div class="home-layout">
+      <main id="main-content">
+        {{ content
+          | replace: '<table>', '<div class="a11y-table"><table class="a11y-table__table">'
+          | replace: '<thead>', '<thead class="a11y-table__thead">'
+          | replace: '<tbody>', '<tbody class="a11y-table__tbody">'
+          | replace: '<tr>', '<tr class="a11y-table__tr">'
+          | replace: '<th>', '<th class="a11y-table__th">'
+          | replace: '<td>', '<td class="a11y-table__td">'
+          | replace: '</table>', '</table></div>'
+        }}
+      </main>
+    </div>
+    {% include footer.html %}
+    {% include before_body_end.html %}
+  </body>
+</html>

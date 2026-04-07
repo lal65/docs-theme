@@ -1,0 +1,10 @@
+.idea
+node_modules
+_includes/@psu-online-education
+*.md
+*.gem
+.bundle
+.jekyll-cache
+.sass-cache
+_site
+Gemfile.lock

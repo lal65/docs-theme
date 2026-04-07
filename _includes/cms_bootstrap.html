@@ -1,0 +1,11 @@
+<script>
+  const global_data = {};
+  const cms = {
+    attach: (component, callback) => callback(document),
+    detach: (component, callback) => { /* Not supported. */ },
+    once: (id, selector, context = document) => context.querySelectorAll(selector),
+    announce: (text, priority) => { /* Not supported. */ },
+    data: name => global_data[name],
+    gtm_container_id: 'GTM-K8NQZW',
+  };
+</script>

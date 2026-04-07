@@ -1,0 +1,55 @@
+@use "../../../base/src/scss/mixins" as oe;
+
+.footer {
+  color: var(--text-color);
+
+  &__top, &__bottom, &__colophon {
+    max-width: oe.rem(119);
+    padding: 0 var(--page-side-padding);
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+  }
+
+  &__top, &__bottom {
+    display: grid;
+    gap: oe.rem(3.5) 7.5%;
+
+    @include oe.bp(m) {
+      grid-template-columns: 20% 40% 1fr;
+    }
+  }
+
+  &__bottom-container {
+    position: relative;
+    padding: oe.rem(5) 0;
+    display: flex;
+    flex-direction: column;
+    gap: oe.rem(4);
+    overflow: hidden;
+
+    @include oe.bp(m) {
+      padding: oe.rem(6) 0;
+    }
+
+    &--dark {
+      background: linear-gradient(to right, var(--nittany-navy), var(--beaver-blue));
+    }
+
+    &-geometrics {
+      opacity: .3;
+      position: absolute;
+      top: oe.rem(-1);
+      right: oe.rem(-30);
+      width: oe.rem(60);
+      height: auto;
+      --hub-geometric-gradient: url(#hub-geometric-footer-bottom-gradient);
+
+      @include oe.bp(m) {
+        left: calc(max(50%, oe.rem(59.5)) + oe.rem(22));
+        width: oe.rem(67);
+
+      }
+    }
+  }
+}
