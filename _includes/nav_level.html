@@ -1,19 +1,37 @@
-<ul class="vertical-menu__menu vertical-menu__menu--{{ include.depth }}" id="vertical-menu-{{ include.depth }}">
+<ul class="vertical-menu__menu vertical-menu__menu--{{ include.depth }}" id="vertical-menu-{{ include.depth }}"{% if include.depth > 1 and include.in_active_trail == false %} style="height:0;overflow:hidden;"{% endif %}>
   {% assign current_pages = site.pages | where_exp: "item", "item.dir == include.folder" | sort: "nav_order" %}
+
   {% for page_item in current_pages %}
-    {% unless page_item.url == include.folder %}
-      <li class="vertical-menu__item vertical-menu__item--{{ include.depth }}">
-        <a class="vertical-menu__link vertical-menu__link--{{ include.depth }}" href="{{ page_item.url | relative_url }}">
+    {% assign current_path = page.url | replace: "index.html", "" | replace: ".html", "" %}
+    {% assign item_path = page_item.url | replace: "index.html", "" | replace: ".html", "" %}
+
+    {% assign item_path_slash = item_path | append: "/" %}
+    {% assign path_prefix = current_path | slice: 0, item_path.size %}
+    {% assign path_prefix_slash = current_path | slice: 0, item_path_slash.size %}
+
+    {% assign is_active = false %}
+    {% if item_path != "/" %}
+      {% if current_path == item_path or path_prefix_slash == item_path_slash %}
+        {% assign is_active = true %}
+      {% endif %}
+    {% elsif current_path == "/" %}
+      {% assign is_active = true %}
+    {% endif %}
+
+    {% if page_item.url == "/" or page_item.url contains ".html" %}
+      <li class="vertical-menu__item vertical-menu__item--{{ include.depth }}{% if is_active %} vertical-menu__item--highlight{% endif %}">
+        <a class="vertical-menu__link vertical-menu__link--{{ include.depth }}{% if page.url == page_item.url %} vertical-menu__link--active-trail{% endif %}" href="{{ page_item.url | relative_url }}">
           {{ page_item.title | default: page_item.name }}
         </a>
 
         {% assign subfolder = page_item.url | replace: ".html", "/" %}
         {% assign children = site.pages | where_exp: "p", "p.dir == subfolder" %}
-        {% if children.size > 0 %}
+
+        {% if page_item.url != include.folder and children.size > 0 %}
           {% assign next_depth = include.depth | plus: 1 %}
           <button class="vertical-menu__toggle"
                   aria-controls="vertical-menu-{{ next_depth }}"
-                  aria-expanded="false">
+                  aria-expanded="{{ is_active }}">
             <span class="visually-hidden">Toggle {{ page_item.title }}</span>
             <span class="vertical-menu__chevron">
               <svg class="sprite sprite--fas-chevron-down" aria-hidden="true" viewBox="0 0 448 512">
@@ -21,9 +39,10 @@
               </svg>
             </span>
           </button>
-          {% include nav_level.html folder=subfolder depth=next_depth %}
+
+          {% include nav_level.html folder=subfolder depth=next_depth in_active_trail=is_active %}
         {% endif %}
       </li>
-    {% endunless %}
+    {% endif %}
   {% endfor %}
 </ul>
