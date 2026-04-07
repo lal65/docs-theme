@@ -21,7 +21,7 @@
     {% if page_item.url == "/" or page_item.url contains ".html" %}
       <li class="vertical-menu__item vertical-menu__item--{{ include.depth }}{% if is_active %} vertical-menu__item--highlight{% endif %}">
         <a class="vertical-menu__link vertical-menu__link--{{ include.depth }}{% if page.url == page_item.url %} vertical-menu__link--active-trail{% endif %}" href="{{ page_item.url | relative_url }}">
-          {{ page_item.title | default: page_item.name }}
+          {{ page_item.menu_title | default: page_item.title }}
         </a>
 
         {% assign subfolder = page_item.url | replace: ".html", "/" %}
@@ -32,7 +32,7 @@
           <button class="vertical-menu__toggle"
                   aria-controls="vertical-menu-{{ next_depth }}"
                   aria-expanded="{{ is_active }}">
-            <span class="visually-hidden">Toggle {{ page_item.title }}</span>
+            <span class="visually-hidden">Toggle {{ page_item.menu_title | default: page_item.title }}</span>
             <span class="vertical-menu__chevron">
               <svg class="sprite sprite--fas-chevron-down" aria-hidden="true" viewBox="0 0 448 512">
                 <use xlink:href="#fas-chevron-down"></use>
