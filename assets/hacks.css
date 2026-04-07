@@ -28,6 +28,7 @@
 .highlighter-rouge {
   overflow: auto;
   max-width: 82rem;
+  margin-bottom: 2rem;
 }
 
 blockquote p {
@@ -39,3 +40,4 @@ blockquote p {
 details p:last-child {
   margin-bottom: 2rem;
 }
+
