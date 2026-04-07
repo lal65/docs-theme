@@ -16,7 +16,10 @@
 }
 
 .default-layout {
-  padding: 5rem var(--page-side-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem var(--page-side-padding);
   max-width: 119rem;
   margin: 0 auto;
 }
