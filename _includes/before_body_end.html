@@ -5,6 +5,6 @@
   {% endcapture %}
   {% assign file_exists = site.static_files | where: "path", path_to_js_asset | strip %}
   {% if file_exists.size != 0 %}
-    <script src="{{ path_to_js_asset | strip }}"></script>
+    <script src="{{ path_to_js_asset | strip | relative_url }}"></script>
   {% endif %}
 {% endfor %}
