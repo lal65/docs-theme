@@ -29,3 +29,7 @@
   overflow: auto;
   max-width: 82rem;
 }
+
+blockquote p {
+  display: contents;
+}
