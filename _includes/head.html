@@ -1,5 +1,25 @@
 {% assign packages = "base, sprite, background-container, page-title, page-title-banner-image, skip-link, list, physical-address, heading, social-icon, social-icons, layout-multi-col, layout-two-col, header, footer, page-title-banner-plain, vertical-menu" | split: ", " %}
 <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="MobileOptimized" content="width" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/apple-touch-icon.png" | relative_url }}">
+  <link rel="mask-icon" href="{{ "/assets/safari-pinned-tab.svg" | relative_url }}" color="#1e407c">
+  <link rel="shortcut icon" href="{{ "/assets/favicon-48x48.ico" | relative_url }}">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon-32x32.png" | relative_url }}" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon-16x16.png" | relative_url }}" sizes="16x16">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon-48x48.png" | relative_url }}" sizes="48x48">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon-57x57.png" | relative_url }}" sizes="57x57">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon-76x76.png" | relative_url }}" sizes="76x76">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon-96x96.png" | relative_url }}" sizes="96x96">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon-128x128.png" | relative_url }}" sizes="128x128">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon-192x192.png" | relative_url }}" sizes="192x192">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon-228x228.png" | relative_url }}" sizes="228x228">
+  <link rel="icon" type="image/png" href="{{ "/assets/favicon-512x512.png" | relative_url }}" sizes="512x512">
+  <meta name="theme-color" content="#1e407c">
+  <title>{{ site.title }} | Penn State World Campus</title>
   {% for package in packages %}
     {% capture path_to_asset %}
       /assets/@psu-online-education/{{ package }}/dist/styles.css
