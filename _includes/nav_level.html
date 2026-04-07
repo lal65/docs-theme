@@ -1,5 +1,5 @@
 <ul class="vertical-menu__menu vertical-menu__menu--{{ include.depth }}" id="vertical-menu-{{ include.depth }}"{% if include.depth > 1 and include.in_active_trail == false %} style="height:0;overflow:hidden;"{% endif %}>
-  {% assign current_pages = site.pages | where_exp: "item", "item.dir == include.folder" | sort: "nav_order" %}
+  {% assign current_pages = site.pages | where_exp: "item", "item.dir == include.folder" | sort: "menu_order" %}
 
   {% for page_item in current_pages %}
     {% assign current_path = page.url | replace: "index.html", "" | replace: ".html", "" %}
