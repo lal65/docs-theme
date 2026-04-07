@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="{{ path_to_asset | strip | relative_url }}">
     {% endif %}
   {% endfor %}
-  <link rel="stylesheet" href="/assets/hacks.css">
+  <link rel="stylesheet" href="{{ "/assets/hacks.css" | relative_url }}">
   {% include webfonts.html %}
   <script>
     const global_data = {};
