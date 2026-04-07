@@ -8,7 +8,7 @@
           {% if forloop.first %}
             Home
           {% elsif forloop.last %}
-            {{ page.title }}
+            {{ page.breadcrumb_title | default page.subtitle_after | default page.title }}
           {% else %}
             {{ crumb | replace:'-',' ' | capitalize }}
           {% endif %}
