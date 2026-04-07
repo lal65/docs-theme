@@ -24,3 +24,8 @@
 .default-layout .layout-two-col {
   flex-direction: row-reverse;
 }
+
+.highlighter-rouge {
+  overflow: auto;
+  max-width: 82rem;
+}
