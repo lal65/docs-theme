@@ -6,7 +6,7 @@
     {% endcapture %}
     {% assign file_exists = site.static_files | where: "path", path_to_asset | strip %}
     {% if file_exists.size != 0 %}
-      <link rel="stylesheet" href="{{ path_to_asset | strip }}">
+      <link rel="stylesheet" href="{{ path_to_asset | strip | relative_url }}">
     {% endif %}
   {% endfor %}
   <link rel="stylesheet" href="/assets/hacks.css">
