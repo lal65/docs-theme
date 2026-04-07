@@ -1,4 +1,4 @@
-{% assign js_packages = "slide-toggle, vertical-menu" | split: ", " %}
+{% assign js_packages = "slide-toggle, drop-button, vertical-menu" | split: ", " %}
 {% for package in js_packages %}
   {% capture path_to_js_asset %}
     /assets/@psu-online-education/{{ package }}/dist/scripts.js
