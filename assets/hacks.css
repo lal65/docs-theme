@@ -1,0 +1,26 @@
+.visually-hidden {
+    position: absolute !important;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    word-wrap: normal;
+}
+.block--system-branding-block .sprite{color:var(--beaver-blue);height:auto;width:13rem;min-width:3rem;max-width:100%}@media(min-width: 550px){.block--system-branding-block .sprite{width:18.5rem}}
+  @media(min-width: 550px){.tagline{margin-left:2rem}}@media(min-width: 950px){.tagline{margin-left:4rem}}.tagline::before{content:"";display:block;background-color:var(--sky-blue);height:0.1rem;width:6rem;margin-bottom:0.6rem}@media(min-width: 550px){.tagline::before{height:0.2rem;width:7rem;margin-bottom:0.7rem}}@media(min-width: 950px){.tagline::before{height:0.3rem;width:8rem;margin-bottom:0.8rem}}.tagline__text{color:var(--text-color);font-family:var(--font-family--default);font-size:var(--font-size--5xsmall);font-weight:var(--font-weight--regular);line-height:var(--line-height--xsnug)}@media(min-width: 550px){.tagline__text{font-size:var(--font-size--3xsmall)}}@media(min-width: 950px){.tagline__text{font-size:var(--font-size--mlarge)}}
+
+.home-layout {
+  padding: 5rem var(--page-side-padding);
+  max-width: 119rem;
+  margin: 0 auto;
+}
+
+.default-layout {
+  padding: 5rem var(--page-side-padding);
+  max-width: 119rem;
+  margin: 0 auto;
+}
+
+.default-layout .layout-two-col {
+  flex-direction: row-reverse;
+}

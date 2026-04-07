@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "postinstall": "cp -ar node_modules/@psu-online-education assets && cp node_modules/@psu-online-education/sprite/dist/sprites.svg _includes && cp node_modules/@psu-online-education/webfonts/webfonts.twig _includes/webfonts.html"
+  },
+  "dependencies": {
+    "@psu-online-education/background-container": "^4.0.0",
+    "@psu-online-education/footer": "^1.0.2",
+    "@psu-online-education/header": "^2.1.1",
+    "@psu-online-education/heading": "^3.1.1",
+    "@psu-online-education/layout-two-col": "^1.0.3",
+    "@psu-online-education/list": "^1.0.1",
+    "@psu-online-education/page-title": "^1.0.3",
+    "@psu-online-education/page-title-banner-image": "^1.0.1",
+    "@psu-online-education/page-title-banner-plain": "^1.0.1",
+    "@psu-online-education/physical-address": "^1.0.1",
+    "@psu-online-education/skip-link": "^2.0.3",
+    "@psu-online-education/slide-toggle": "^1.0.1",
+    "@psu-online-education/social-icon": "^2.0.2",
+    "@psu-online-education/social-icons": "^2.0.1",
+    "@psu-online-education/vertical-menu": "^2.1.1"
+  }
+}

@@ -1,0 +1,25 @@
+{% assign packages = "base, sprite, background-container, page-title, page-title-banner-image, skip-link, list, physical-address, heading, social-icon, social-icons, layout-multi-col, layout-two-col, header, footer, page-title-banner-plain, vertical-menu" | split: ", " %}
+<head>
+  {% for package in packages %}
+    {% capture path_to_asset %}
+      /assets/@psu-online-education/{{ package }}/dist/styles.css
+    {% endcapture %}
+    {% assign file_exists = site.static_files | where: "path", path_to_asset | strip %}
+    {% if file_exists.size != 0 %}
+      <link rel="stylesheet" href="{{ path_to_asset | strip }}">
+    {% endif %}
+  {% endfor %}
+  <link rel="stylesheet" href="/assets/hacks.css">
+  {% include webfonts.html %}
+  <script>
+    const global_data = {};
+    const cms = {
+      attach: (component, callback) => callback(document),
+      detach: (component, callback) => { /* Not supported. */ },
+      once: (id, selector, context = document) => context.querySelectorAll(selector),
+      announce: (text, priority) => { /* Not supported. */ },
+      data: name => global_data[name],
+      gtm_container_id: 'GTM-K8NQZW',
+    };
+  </script>
+</head>

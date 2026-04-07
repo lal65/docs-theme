@@ -1,0 +1,10 @@
+{% assign js_packages = "slide-toggle, vertical-menu" | split: ", " %}
+{% for package in js_packages %}
+  {% capture path_to_js_asset %}
+    /assets/@psu-online-education/{{ package }}/dist/scripts.js
+  {% endcapture %}
+  {% assign file_exists = site.static_files | where: "path", path_to_js_asset | strip %}
+  {% if file_exists.size != 0 %}
+    <script src="{{ path_to_js_asset | strip }}"></script>
+  {% endif %}
+{% endfor %}

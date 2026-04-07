@@ -1,0 +1,74 @@
+{% if page.image | size > 0 %}
+  <div class="page-title-banner-image">
+    <div class="page-title-banner-image__background">
+      <div class="page-title-banner-image__image">
+        <img src="{{ page.image }}">
+      </div>
+      <div class="page-title-banner-image__gradient"></div>
+      <div class="page-title-banner-image__geometrics">
+        <svg width="0" height="0" style="position:absolute">
+          <defs>
+            <linearGradient id="hub-geometric-page-title-image-gradient" x1="0.588" x2="1.272" gradientUnits="objectBoundingBox">
+              <stop offset="0" stop-color="var(--white)" stop-opacity="1" />
+              <stop offset="1" stop-color="var(--white)" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg class="sprite sprite--hub-geometric" aria-hidden="true" viewBox="0 0 719.5 718.4">
+          <use xlink:href="#hub-geometric" />
+        </svg> <svg class="sprite sprite--hub-geometric" aria-hidden="true" viewBox="0 0 719.5 718.4">
+          <use xlink:href="#hub-geometric" />
+        </svg>
+      </div>
+    </div>
+    <div class="page-title-banner-image__content">
+      <div class="page-title-banner-image__title">
+        <div class="page-title-typography">
+          <h1 class="heading heading--vspace-none">
+            <span class="page-title-typography__content page-title-typography__content--reversed">
+              {% if page.subtitle_before | size > 0 %}
+                <span class="page-title-typography__subtitle-before">{{ page.subtitle_before}}</span>
+              {% endif %}
+              <span class="page-title-typography__title">{{ page.title }}</span>
+              {% if page.subtitle_after | size > 0 %}
+                <span class="page-title-typography__subtitle-after">{{ page.subtitle_after}}</span>
+              {% endif %}
+            </span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <div class="page-title-banner-plain">
+    <div class="page-title-banner-plain__geometrics">
+      <svg width="0" height="0" style="position:absolute">
+        <defs>
+          <linearGradient id="hub-geometric-page-title-banner-plain-gradient" x1="0.539" y1="0.24" x2="0.02" y2="0.066" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="var(--sky-blue)" />
+            <stop offset="1" stop-color="var(--sky-blue)" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <svg class="sprite sprite--hub-geometric" aria-hidden="true" viewBox="0 0 719.5 718.4">
+        <use xlink:href="#hub-geometric" />
+      </svg>
+    </div>
+    <div class="page-title-banner-plain__content">
+      <div class="page-title-typography">
+        <h1 class="heading heading--vspace-none">
+          <span class="page-title-typography__content">
+            {% if page.subtitle_before | size > 0 %}
+              <span class="page-title-typography__subtitle-before">{{ page.subtitle_before}}</span>
+            {% endif %}
+            <span class="page-title-typography__title">{{ page.title }}</span>
+            {% if page.subtitle_after | size > 0 %}
+              <span class="page-title-typography__subtitle-after">{{ page.subtitle_after}}</span>
+            {% endif %}
+          </span>
+        </h1>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
