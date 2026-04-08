@@ -66,12 +66,16 @@
 .default-layout .layout-two-col {
   flex-direction: row-reverse;
 }
-
-.sidebar-navigation {
+.header {
   position: sticky;
   top: 0;
+  z-index: var(--z-index--floating);
+}
+.sidebar-navigation {
+  position: sticky;
+  top: 10rem;
   overflow: auto;
-  max-height: 100vh;
+  max-height: calc(100vh - 10rem);
 }
 
 div.highlight {
