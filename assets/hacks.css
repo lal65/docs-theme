@@ -74,7 +74,7 @@
   max-height: 100vh;
 }
 
-.highlighter-rouge {
+.highlight {
   overflow: auto;
   max-width: 82rem;
   margin-bottom: 2rem;
