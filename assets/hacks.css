@@ -78,6 +78,8 @@
   overflow: auto;
   max-width: 82rem;
   margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: .5rem;
 }
 
 blockquote p {
