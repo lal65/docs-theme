@@ -8,19 +8,13 @@
       <li class="breadcrumbs__item">
         {% if forloop.first %}
           <a class="breadcrumbs__link" href="{{ site.baseurl | default: '/' }}">Home</a>
+        {% elsif forloop.last %}
+          {{ page.breadcrumb_title | default: page.subtitle_after | default: page.title }}
         {% else %}
           {% assign current_path = current_path | append: '/' | append: crumb %}
-          {% if forloop.last %}
-            {% assign link_url = page.url %}
-          {% else %}
-            {% assign link_url = current_path | append: '.html' %}
-          {% endif %}
+          {% assign link_url = current_path | append: '.html' %}
           <a class="breadcrumbs__link" href="{{ link_url | relative_url }}" {% if forloop.last %}aria-current="page"{% endif %}>
-            {% if forloop.last %}
-              {{ page.breadcrumb_title | default: page.subtitle_after | default: page.title }}
-            {% else %}
-              {{ crumb | replace: '-', ' ' | capitalize }}
-            {% endif %}
+            {{ crumb | replace: '-', ' ' | capitalize }}
           </a>
         {% endif %}
 
