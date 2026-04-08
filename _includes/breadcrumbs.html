@@ -1,18 +1,29 @@
 <nav class="breadcrumbs" aria-labelledby="breadcrumbs">
   <h2 class="visually-hidden" id="breadcrumbs">Breadcrumbs</h2>
   <ol class="breadcrumbs__list">
-    {% assign crumbs = page.url | remove_first: site.baseurl | remove:'/index.html' | split: '/' %}
+    {% assign crumbs = page.url | remove: '/index.html' | split: '/' %}
+    {% assign current_path = '' %}
+
     {% for crumb in crumbs %}
       <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="">
-          {% if forloop.first %}
-            Home
-          {% elsif forloop.last %}
-            {{ page.breadcrumb_title | default: page.subtitle_after | default: page.title }}
+        {% if forloop.first %}
+          <a class="breadcrumbs__link" href="{{ site.baseurl | default: '/' }}">Home</a>
+        {% else %}
+          {% assign current_path = current_path | append: '/' | append: crumb %}
+          {% if forloop.last %}
+            {% assign link_url = page.url %}
           {% else %}
-            {{ crumb | replace:'-',' ' | capitalize }}
+            {% assign link_url = current_path | append: '.html' %}
           {% endif %}
-        </a>
+          <a class="breadcrumbs__link" href="{{ link_url | relative_url }}" {% if forloop.last %}aria-current="page"{% endif %}>
+            {% if forloop.last %}
+              {{ page.breadcrumb_title | default: page.subtitle_after | default: page.title }}
+            {% else %}
+              {{ crumb | replace: '-', ' ' | capitalize }}
+            {% endif %}
+          </a>
+        {% endif %}
+
         {% unless forloop.last %}
           <svg class="sprite sprite--fas-chevron-right" aria-hidden="true" viewBox="0 0 320 512">
             <use xlink:href="#fas-chevron-right" />
