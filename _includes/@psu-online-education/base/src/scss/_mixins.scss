@@ -1,0 +1,53 @@
+@use "sass:string";
+$base-rem-scale: 1 !default;
+
+@function rem($base) {
+  @return string.unquote(($base * $base-rem-scale) + 'rem');
+}
+
+// Expose breakpoint values, for edge-case media queries
+$bp_xxs: 320px;
+$bp_xs: 550px;
+$bp_smaller: 675px;
+$bp_s: 800px;
+$bp_m: 950px;
+$bp_l: 1024px;
+$bp_xl: 1280px;
+
+@mixin bp($point) {
+  @if $point == xxs {
+    @media (min-width: $bp_xxs) {
+      @content;
+    }
+  }
+  @else if $point == xs {
+    @media (min-width: $bp_xs) {
+      @content;
+    }
+  }
+  @else if $point == s {
+    @media (min-width: $bp_s) {
+      @content;
+    }
+  }
+  @else if $point == smaller {
+    @media (min-width: $bp-smaller) {
+      @content;
+    }
+  }
+  @else if $point == m {
+    @media (min-width: $bp_m) {
+      @content;
+    }
+  }
+  @else if $point == l {
+    @media (min-width: $bp_l) {
+      @content;
+    }
+  }
+  @else if $point == xl {
+    @media (min-width: $bp_xl) {
+      @content;
+    }
+  }
+}
