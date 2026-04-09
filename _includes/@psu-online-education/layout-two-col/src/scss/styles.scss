@@ -1,0 +1,9 @@
+@use "../../../base/src/scss/mixins" as oe;
+
+.layout-two-col {
+  flex-direction: column;
+
+  @include oe.bp(xs) {
+    flex-direction: row;
+  }
+}

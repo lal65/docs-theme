@@ -63,9 +63,12 @@
   margin: 0 auto;
 }
 
-.default-layout .layout-two-col {
-  flex-direction: row-reverse;
+@media (min-width: 550px) {
+  .default-layout .layout-two-col {
+    flex-direction: row-reverse;
+  }
 }
+
 .header {
   position: sticky;
   top: 0;

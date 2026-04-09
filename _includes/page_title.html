@@ -2,7 +2,12 @@
   <div class="page-title-banner-image">
     <div class="page-title-banner-image__background">
       <div class="page-title-banner-image__image">
-        <img src="{{ page.image | relative_url }}">
+        {% assign extension = page.image | slice: -4, 4 %}
+        {% if extension == ".svg" %}
+          {% include {{ page.image }} %}
+        {% else %}
+          <img src="{{ page.image | relative_url }}">
+        {% endif %}
       </div>
       <div class="page-title-banner-image__gradient"></div>
       <div class="page-title-banner-image__geometrics">
@@ -71,4 +76,3 @@
     </div>
   </div>
 {% endif %}
-

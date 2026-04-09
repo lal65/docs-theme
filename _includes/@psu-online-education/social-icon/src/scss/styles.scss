@@ -1,0 +1,36 @@
+@use "../../../base/src/scss/mixins" as oe;
+
+.social-icon {
+  min-width: oe.rem(4.4);
+  display: inline-block;
+  transition: .3s opacity ease-in;
+  opacity: .8;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  &--light {
+    color: var(--white);
+
+    &:hover,
+    &:focus {
+      color: var(--white);
+    }
+  }
+
+  &--dark {
+    color: var(--pa-link);
+
+    &:hover,
+    &:focus {
+      color: var(--pa-link);
+    }
+  }
+
+  .sprite {
+    width: oe.rem(4.4);
+    height: oe.rem(4.4);
+  }
+}
