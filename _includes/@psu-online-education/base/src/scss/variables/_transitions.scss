@@ -1,6 +1,0 @@
-@use "../mixins" as oe;
-
-:root {
-  --transition-duration--medium: 200ms;
-  --transition-duration--default: var(--transition-duration--medium);
-}
