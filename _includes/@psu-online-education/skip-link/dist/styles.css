@@ -1,0 +1,1 @@
+.skip-link{min-width:4rem;padding:2rem 2.5rem;outline:0.2rem solid var(--sky-blue);outline-offset:0;z-index:var(--z-index--floating);background:var(--white);position:absolute;overflow:hidden;clip:rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);text-decoration:none}.skip-link:focus{left:1rem;top:1rem;clip:auto;overflow:visible;outline-offset:-0.4rem}
