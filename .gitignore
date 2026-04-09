@@ -1,6 +1,7 @@
 .idea
 node_modules
-assets/@psu-online-education
+_includes/@psu-online-education
+*.md
 *.gem
 .bundle
 .jekyll-cache
