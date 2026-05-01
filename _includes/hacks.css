@@ -208,7 +208,7 @@ tbody tr:not(:last-child) td::after {
   background: var(--a11y-table-border-color)
 }
 
-.docs-theme-header-content .drop-button__content {
+.docs-theme-header-content .vertical-menu {
   max-height: 90vh;
   overflow: auto;
 }
