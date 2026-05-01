@@ -77,7 +77,6 @@
 .sidebar-navigation {
   position: sticky;
   top: 10rem;
-  max-height: calc(100vh - 10rem);
 }
 
 div.highlight {
