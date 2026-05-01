@@ -77,6 +77,13 @@
 .sidebar-navigation {
   position: sticky;
   top: 10rem;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  overflow: auto;
+  margin-left: -2rem;
+  padding-left: 2rem;
 }
 
 div.highlight {
